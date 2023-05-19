@@ -1,18 +1,19 @@
-import Header from "./component/Header"
-import { Outlet } from "react-router-dom";
+import logo from "./logo.svg"
+import "./style/App.scss"
+import Nav from "./views/Nav";
+import Todo from "./views/Todo/Todo";
+import { useState } from "react";
 
-
-function App() {
+const App = () => {
+  let [author] = useState('NOT ME')
   return (
     <div className="App">
-      <div className="app-header">
-        <Header />
-      </div>
-      <div className="app-content">
-        <Outlet />
-      </div>
+      <Nav />
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <Todo author={author} />
+      </header>
     </div>
-
   );
 }
 
