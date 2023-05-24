@@ -8,8 +8,8 @@ const App = () => {
   let [author] = useState('NOT ME')
   return (
     <div className="App">
-      <Nav />
       <header className="App-header">
+        <Nav />
         <img src={logo} className="App-logo" alt="logo" />
         <Todo author={author} />
       </header>

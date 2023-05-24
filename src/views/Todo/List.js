@@ -7,10 +7,24 @@ const List = (props) => {
         setEdit({ ...edit, item, index })
     }
     const handleConfirm = (item, index) => {
-        setEdit({})
-        props.editTodo(item, index)
+        if (!item) {
+            alert('Missing paragram!')
+        }
+        else {
+            setEdit({})
+            props.editTodo(item, index)
+        }
     }
     const handleDelete = (index) => {
+        if (Object.keys(edit) !== 0) {
+            if (index === edit.index) {
+                setEdit({})
+            }
+            if (index < edit.index) {
+                edit.index = edit.index - 1
+                setEdit({ ...edit })
+            }
+        }
         props.deleteTodo(index)
     }
     const handleChange = (event) => {
