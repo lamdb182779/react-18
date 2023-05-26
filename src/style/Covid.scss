@@ -1,0 +1,24 @@
+.covid-container {
+    .covid-content {
+        overflow-y: auto;
+
+        table {
+            font-family    : arial, sans-serif;
+            border-collapse: collapse;
+            width          : 70%;
+            margin         : 50px auto;
+
+            td,
+            th {
+                border    : 1px solid gray;
+                text-align: left;
+                padding   : 8px;
+            }
+
+            tr:nth-child(odd) {
+                background-color: white;
+                color           : black;
+            }
+        }
+    }
+}
