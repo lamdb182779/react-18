@@ -1,23 +1,28 @@
 .covid-container {
     .covid-content {
-        overflow-y: auto;
+        .scroll-table {
+            overflow-y: auto;
+            height    : 400px;
+            width     : 80%;
+            margin    : 50px auto;
+            border    : 1px solid gray;
 
-        table {
-            font-family    : arial, sans-serif;
-            border-collapse: collapse;
-            width          : 70%;
-            margin         : 50px auto;
+            table {
+                font-family    : arial, sans-serif;
+                border-collapse: collapse;
+                width          : 100%;
 
-            td,
-            th {
-                border    : 1px solid gray;
-                text-align: left;
-                padding   : 8px;
-            }
+                td,
+                th {
+                    border    : 1px solid gray;
+                    text-align: center;
+                    padding   : 8px;
+                }
 
-            tr:nth-child(odd) {
-                background-color: white;
-                color           : black;
+                tr:nth-child(odd) {
+                    background-color: white;
+                    color           : black;
+                }
             }
         }
     }

@@ -21,43 +21,45 @@ const Covid = (props) => {
     return (
         <div className="covid-container">
             <div className="covid-content">
-                <table>
-                    <tr>
-                        <th>STT</th>
-                        <th>Khu vực</th>
-                        <th>Tổng ca bệnh</th>
-                        <th>Số ca tử vong</th>
-                        <th>Số ca điều trị</th>
-                        <th>Số ca hồi phục</th>
-                        <th>Ca bệnh mới</th>
-                    </tr>
-                    {data && data.length > 0 ?
-                        <>
-                            {data.map((item, index) => {
-                                return (
-                                    <tr>
-                                        <td>{index + 1}</td>
-                                        <td>{item.name}</td>
-                                        <td>{item.death}</td>
-                                        <td>{item.treating}</td>
-                                        <td>{item.cases}</td>
-                                        <td>{item.recovered}</td>
-                                        <td>{item.casesToday}</td>
-                                    </tr>
-                                )
-                            })
-                            }
-                        </>
-                        :
-                        <>
-                            <tr>
-                                <td colspan="7" style={{ textAlign: 'center' }}>
-                                    Không có dữ liệu
-                                </td>
-                            </tr>
-                        </>
-                    }
-                </table>
+                <div className="scroll-table">
+                    <table>
+                        <tr>
+                            <th>STT</th>
+                            <th>Khu vực</th>
+                            <th>Tổng ca bệnh</th>
+                            <th>Số ca tử vong</th>
+                            <th>Số ca điều trị</th>
+                            <th>Số ca hồi phục</th>
+                            <th>Ca bệnh mới</th>
+                        </tr>
+                        {data && data.length > 0 ?
+                            <>
+                                {data.map((item, index) => {
+                                    return (
+                                        <tr>
+                                            <td>{index + 1}</td>
+                                            <td>{item.name}</td>
+                                            <td>{item.death}</td>
+                                            <td>{item.treating}</td>
+                                            <td>{item.cases}</td>
+                                            <td>{item.recovered}</td>
+                                            <td>{item.casesToday}</td>
+                                        </tr>
+                                    )
+                                })
+                                }
+                            </>
+                            :
+                            <>
+                                <tr>
+                                    <td colspan="7" style={{ textAlign: 'center' }}>
+                                        Không có dữ liệu
+                                    </td>
+                                </tr>
+                            </>
+                        }
+                    </table>
+                </div>
             </div>
         </div>
     )
