@@ -1,16 +1,21 @@
 import "../../style/Covid.scss"
 import axios from "axios"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 
 const Covid = (props) => {
     let [data, setData] = useState([])
-    useEffect(async () => {
+
+    const getInfo = useCallback(async () => {
         let res = await axios.get('https://api.apify.com/v2/key-value-stores/ZsOpZgeg7dFS1rgfM/records/LATEST')
         console.log(res)
-        let rs = res && res.data && res.data.detail && res.data.detail.length > 0 ? res.data.detail : []
+        let rs = res?.data?.detail?.length > 0 ? res.data.detail : []
         console.log(rs)
-        setData([...rs])
-        console.log(data)
+        setData(rs)
+    }, [])
+
+    console.log(data)
+    useEffect(() => {
+        getInfo()
     }, [])
 
     return (
@@ -29,15 +34,17 @@ const Covid = (props) => {
                     {data && data.length > 0 ?
                         <>
                             {data.map((item, index) => {
-                                <tr>
-                                    <td>{index + 1}</td>
-                                    <td>{item.name}</td>
-                                    <td>{item.death}</td>
-                                    <td>{item.treating}</td>
-                                    <td>{item.cases}</td>
-                                    <td>{item.recovered}</td>
-                                    <td>{item.casesToday}</td>
-                                </tr>
+                                return (
+                                    <tr>
+                                        <td>{index + 1}</td>
+                                        <td>{item.name}</td>
+                                        <td>{item.death}</td>
+                                        <td>{item.treating}</td>
+                                        <td>{item.cases}</td>
+                                        <td>{item.recovered}</td>
+                                        <td>{item.casesToday}</td>
+                                    </tr>
+                                )
                             })
                             }
                         </>
