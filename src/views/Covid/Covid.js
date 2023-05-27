@@ -10,7 +10,7 @@ const Covid = (props) => {
         console.log(res)
         let rs = res?.data?.detail?.length > 0 ? res.data.detail : []
         console.log(rs)
-        setData([])
+        setData(rs)
     }, [])
 
     console.log(data)
