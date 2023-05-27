@@ -13,7 +13,7 @@ const App = () => {
         <Nav />
         <img src={logo} className="App-logo" alt="logo" />
         {/* <Todo author={author} /> */}
-        <Covid />
+        <Covid author={author} />
       </header>
     </div>
   );

@@ -20,6 +20,9 @@ const Covid = (props) => {
 
     return (
         <div className="covid-container">
+            <div className="covid-title">
+                <h2>COVID19 INFOMATION IN VIETNAM WITH {props.author}</h2>
+            </div>
             <div className="covid-content">
                 <div className="scroll-table">
                     <table>
@@ -39,9 +42,9 @@ const Covid = (props) => {
                                         <tr>
                                             <td>{index + 1}</td>
                                             <td>{item.name}</td>
+                                            <td>{item.cases}</td>
                                             <td>{item.death}</td>
                                             <td>{item.treating}</td>
-                                            <td>{item.cases}</td>
                                             <td>{item.recovered}</td>
                                             <td>{item.casesToday}</td>
                                         </tr>

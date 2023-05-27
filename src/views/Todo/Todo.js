@@ -17,7 +17,7 @@ const Todo = (props) => {
     }
     return (
         <div className="todo-container">
-            <div>To do App with {props.autor}</div>
+            <div>To do App with {props.author}</div>
             <List todo={todo} editTodo={editTodo} deleteTodo={deleteTodo} />
             <Add addNewTodo={addNewTodo} />
         </div>
