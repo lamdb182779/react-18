@@ -10,7 +10,7 @@ const Covid = (props) => {
         console.log(res)
         let rs = res?.data?.detail?.length > 0 ? res.data.detail : []
         console.log(rs)
-        setData(rs)
+        setData([])
     }, [])
 
     console.log(data)
@@ -51,7 +51,7 @@ const Covid = (props) => {
                         :
                         <>
                             <tr>
-                                <td>
+                                <td colspan="7" style={{ textAlign: 'center' }}>
                                     Không có dữ liệu
                                 </td>
                             </tr>
