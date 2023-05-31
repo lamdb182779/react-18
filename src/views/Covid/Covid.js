@@ -30,7 +30,7 @@ const Covid = (props) => {
                                         <>
                                             {data.map((item, index) => {
                                                 return (
-                                                    <tr>
+                                                    <tr key={index}>
                                                         <td>{index + 1}</td>
                                                         <td>{item.name}</td>
                                                         <td>{item.cases}</td>
