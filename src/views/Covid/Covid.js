@@ -1,28 +1,8 @@
 import "../../style/Covid.scss"
-import axios from "axios"
-import { useState, useEffect, useCallback } from "react"
+import useFetch from "../../custom/fetch"
 
 const Covid = (props) => {
-    let [data, setData] = useState([])
-    let [loading, setLoading] = useState(true)
-    const getInfo = useCallback(async () => {
-        try {
-            let res = await axios.get('https://api.apify.com/v2/key-value-stores/ZsOpZgeg7dFS1rgfM/records/LATEST')
-            console.log('res:', res)
-            let rs = res?.data?.detail?.length > 0 ? res.data.detail : []
-            console.log('rs:', rs)
-            setData(rs)
-        }
-        catch (e) {
-            console.log('Error:', e)
-        }
-        setLoading(false)
-    }, [])
-
-    console.log('data:', data)
-    useEffect(() => {
-        getInfo()
-    }, [])
+    const { data, loading } = useFetch('https://api.apify.com/v2/key-value-stores/ZsOpZgeg7dFS1rgfM/records/LATEST')
 
     return (
         <div className="covid-container">
