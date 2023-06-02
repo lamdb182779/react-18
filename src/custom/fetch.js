@@ -8,7 +8,7 @@ const useFetch = (url) => {
     const getInfo = async () => {
         try {
             let res = await axios.get(url)
-            let rs = res?.data?.detail?.length > 0 ? res.data.detail : []
+            let rs = res?.data?.detail ? res.data.detail : res?.data ? res.data : []
             setData(rs)
         }
         catch (e) {
@@ -16,6 +16,7 @@ const useFetch = (url) => {
         }
         setLoading(false)
     }
+
     useEffect(() => {
         getInfo()
     }, [url])// eslint-disable-line react-hooks/exhaustive-deps

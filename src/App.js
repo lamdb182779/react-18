@@ -5,12 +5,15 @@ import Todo from "./views/Todo/Todo";
 import Covid from "./views/Covid/Covid";
 import { useState } from "react";
 import CountDown from "./views/CountDown/CountDown";
+import Blog from "./views/Blog/Blog";
+import Detail from "./views/Blog/Detail";
 
 import {
   BrowserRouter,
   Route,
   Routes
 } from "react-router-dom"
+
 
 const App = () => {
   let [author] = useState('NOT ME')
@@ -27,6 +30,8 @@ const App = () => {
             <Route path="/" element={<CountDown />} />
             <Route path="/covid" element={<Covid author={author} />} />
             <Route path="/todo" element={<Todo author={author} />} />
+            <Route path="/blog" element={<Blog author={author} />} />
+            <Route path="/blog/:id" element={<Detail author={author} />} />
           </Routes>
         </header>
       </div>

@@ -1,0 +1,37 @@
+.detail-container {
+    .detail-content {
+        text-align: left;
+        font-size : 20px;
+
+        span {
+            margin-left: 5%;
+            cursor     : pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &:active {
+                color          : blue;
+                text-decoration: underline;
+            }
+        }
+
+        .detail-blog {
+            margin: 1% 15%;
+        }
+
+        .detail-body {
+            margin-top: 5%;
+        }
+
+        .detail-title {
+            text-align: center;
+        }
+
+        .detail-loading,
+        .detail-nodata {
+            text-align: center;
+        }
+    }
+}

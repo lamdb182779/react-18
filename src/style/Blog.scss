@@ -1,0 +1,64 @@
+.blog-container {
+    .blog-title {
+        .h2 {
+            font-size: 2em;
+        }
+    }
+
+    .blog-content {
+        padding: 10px;
+
+        .blog-grid {
+            display              : grid;
+            grid-template-columns: auto auto auto auto auto;
+            column-gap           : 30px;
+            row-gap              : 30px;
+            margin               : 0 10%;
+
+            .item-blog {
+                border-radius   : 15px;
+                background-color: white;
+                color           : black;
+
+                .item-title {
+                    height       : 70px;
+                    border-bottom: 5px solid #282c34;
+                    text-align   : left;
+
+                    a {
+                        cursor: pointer;
+
+                        &:link {
+                            text-decoration: none;
+                            color          : black
+                        }
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+
+                        &:visited {
+                            color: violet
+                        }
+
+                        &:active {
+                            color          : red;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                .item-body {
+                    text-align: left;
+                }
+            }
+        }
+
+        .blog-loading,
+        .blog-nodata {
+            text-align: center;
+            font-size : 20px;
+            margin-top: 15%;
+        }
+    }
+}
