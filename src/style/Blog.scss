@@ -1,6 +1,6 @@
 .blog-container {
     .blog-title {
-        .h2 {
+        h2 {
             font-size: 2em;
         }
     }
@@ -21,30 +21,43 @@
                 color           : black;
 
                 .item-title {
+                    display      : flex;
                     height       : 70px;
                     border-bottom: 5px solid #282c34;
                     text-align   : left;
+                    position     : relative;
 
-                    a {
-                        cursor: pointer;
+                    .item-link {
+                        margin-right: 5%;
 
-                        &:link {
-                            text-decoration: none;
-                            color          : black
+                        a {
+                            cursor: pointer;
+
+                            &:link {
+                                text-decoration: none;
+                                color          : black
+                            }
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
+
+                            &:visited {
+                                color: violet
+                            }
+
+                            &:active {
+                                color          : red;
+                                text-decoration: underline;
+                            }
                         }
+                    }
 
-                        &:hover {
-                            text-decoration: underline;
-                        }
-
-                        &:visited {
-                            color: violet
-                        }
-
-                        &:active {
-                            color          : red;
-                            text-decoration: underline;
-                        }
+                    .item-delete {
+                        position: absolute;
+                        right   : 1%;
+                        top     : 1%;
+                        cursor  : pointer;
                     }
                 }
 

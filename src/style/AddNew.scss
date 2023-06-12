@@ -1,0 +1,17 @@
+.addnew-container {
+    .addnew-title {
+        h2 {
+            text-align: center;
+        }
+    }
+
+    .addnew-content {
+        text-align: left;
+        padding   : 0px 15%;
+
+        button {
+            display: block;
+            margin : 2% auto;
+        }
+    }
+}

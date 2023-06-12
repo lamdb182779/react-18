@@ -1,5 +1,8 @@
 import logo from "./logo.svg"
 import "./style/App.scss"
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+
 import Nav from "./views/Nav";
 import Todo from "./views/Todo/Todo";
 import Covid from "./views/Covid/Covid";
@@ -13,6 +16,7 @@ import {
   Route,
   Routes
 } from "react-router-dom"
+import AddNew from "./views/Blog/AddNew";
 
 
 const App = () => {
@@ -32,11 +36,23 @@ const App = () => {
             <Route path="/todo" element={<Todo author={author} />} />
             <Route path="/blog" element={<Blog author={author} />} />
             <Route path="/blog/:id" element={<Detail author={author} />} />
+            <Route path="/blog/add-new-blog" element={<AddNew author={author} />} />
           </Routes>
         </header>
       </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </BrowserRouter>
-
   );
 }
 
