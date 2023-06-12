@@ -3,6 +3,9 @@ import "../../style/Blog.scss"
 import { Link } from "react-router-dom"
 import Button from 'react-bootstrap/Button';
 import Modal from "react-bootstrap/Modal";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import { useEffect, useState } from "react";
 import AddNew from "./AddNew";
 import { toast } from "react-toastify";
@@ -13,6 +16,26 @@ const Blog = (props) => {
     let [save, setSave] = useState(false)
     let [topTwenty, setTopTwenty] = useState([])
     let [del, setDel] = useState(-1)
+    const chunkSize = 4
+    const splitArr = (arr, chunk) => {
+        let len = arr.length
+        while (len / chunk < len % chunk) {
+            chunk--
+        }
+        let tempArr = []
+        let rem = len % chunk
+        let i = 0
+        for (i; i < rem * (chunk + 1); i += (chunk + 1)) {
+            let myChunk = arr.slice(i, i + chunk + 1);
+            tempArr.push(myChunk);
+        }
+        for (; i < len; i += chunk) {
+            let myChunk = arr.slice(i, i + chunk);
+            tempArr.push(myChunk);
+        }
+        console.log(tempArr)
+        return tempArr
+    }
     const handleShow = (setShow) => {
         setShow(true)
     }
@@ -22,7 +45,9 @@ const Blog = (props) => {
 
     const { data, loading } = useFetch('https://jsonplaceholder.typicode.com/posts')
     useEffect(() => {
-        setTopTwenty(data?.length > 0 ? data.slice(0, 20) : data)
+        let res = data?.length > 0 ? data.slice(0, 20) : data
+        res = splitArr(res, chunkSize)
+        setTopTwenty(res)
     }, [data])// eslint-disable-line react-hooks/exhaustive-deps
 
     const handleSaveChanges = () => {
@@ -30,9 +55,10 @@ const Blog = (props) => {
     }
 
     const handleDelete = (id) => {
-        let data = topTwenty
-        data = data.filter(item => item.id !== id)
-        setTopTwenty(data)
+        let res = topTwenty.flat()
+        res = res.filter(item => item.id !== id)
+        res = splitArr(res, chunkSize)
+        setTopTwenty(res)
         handleClose(setShowConfirm)
         toast.success('Delete Complete!')
     }
@@ -44,9 +70,10 @@ const Blog = (props) => {
 
     const updateTopTwenty = (blog) => {
         if (blog) {
-            let data = topTwenty
-            data.unshift(blog)
-            setTopTwenty(data)
+            let res = topTwenty.flat()
+            res.unshift(blog)
+            res = splitArr(res, chunkSize)
+            setTopTwenty(res)
         }
         setSave(false)
         handleClose(setShowAdd)
@@ -66,26 +93,35 @@ const Blog = (props) => {
                         <>
                             {topTwenty?.length > 0 ?
                                 <>
-                                    <div className="blog-grid">
-                                        {topTwenty.map((item, index) => {
+                                    <Container className="blog-grid">
+                                        {topTwenty.map((row, rowId) => {
                                             return (
-                                                <div className="item-blog" key={index}>
-                                                    <div className="item-title">
-                                                        <div className="item-link">
-                                                            <Link to={`/blog/${item.id}`}>{item.title}</Link>
-                                                        </div>
-                                                        <div className="item-delete" onClick={() => handleConfirm(item.id)}>
-                                                            X
-                                                        </div>
-                                                    </div>
-                                                    <div className="item-body">
-                                                        {item.body}
-                                                    </div>
-                                                </div>
+                                                <Row key={rowId}>
+                                                    {row.map((item, index) => {
+                                                        return (
+                                                            <Col key={index}>
+                                                                <div className="item-blog">
+                                                                    <div className="item-title">
+                                                                        <div className="item-link">
+                                                                            <Link to={`/blog/${item.id}`}>{item.title}</Link>
+                                                                        </div>
+                                                                        <div className="item-delete" onClick={() => handleConfirm(item.id)}>
+                                                                            X
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className="item-body">
+                                                                        {item.body}
+                                                                    </div>
+                                                                </div>
+                                                            </Col>
+                                                        )
+                                                    })
+                                                    }
+                                                </Row>
                                             )
                                         })
                                         }
-                                    </div>
+                                    </Container>
                                 </>
                                 :
                                 <>

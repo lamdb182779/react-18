@@ -10,13 +10,13 @@ import { useState } from "react";
 import CountDown from "./views/CountDown/CountDown";
 import Blog from "./views/Blog/Blog";
 import Detail from "./views/Blog/Detail";
+import NotFound from "./views/NotFound/NotFound";
 
 import {
   BrowserRouter,
   Route,
   Routes
 } from "react-router-dom"
-import AddNew from "./views/Blog/AddNew";
 
 
 const App = () => {
@@ -36,7 +36,7 @@ const App = () => {
             <Route path="/todo" element={<Todo author={author} />} />
             <Route path="/blog" element={<Blog author={author} />} />
             <Route path="/blog/:id" element={<Detail author={author} />} />
-            <Route path="/blog/add-new-blog" element={<AddNew author={author} />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </header>
       </div>

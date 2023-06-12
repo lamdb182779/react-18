@@ -9,20 +9,15 @@
         padding: 10px;
 
         .blog-grid {
-            display              : grid;
-            grid-template-columns: auto auto auto auto auto;
-            column-gap           : 30px;
-            row-gap              : 30px;
-            margin               : 0 10%;
 
             .item-blog {
                 border-radius   : 15px;
                 background-color: white;
                 color           : black;
+                margin-top      : 30px;
 
                 .item-title {
                     display      : flex;
-                    height       : 70px;
                     border-bottom: 5px solid #282c34;
                     text-align   : left;
                     position     : relative;
