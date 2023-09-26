@@ -1,0 +1,31 @@
+.scroll-number {
+    height       : 3rem;
+    overflow-y   : scroll;
+    overflow-x   : hidden;
+    margin-inline: 0.1rem;
+    width        : 2rem;
+}
+
+.random,
+.show {
+    background-color: gray;
+    justify-content : center;
+    align-items     : center;
+    height          : 3rem;
+    width           : 2rem;
+}
+
+.random {
+    transition   : none;
+    margin-top   : -3.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.random.scroll {
+    transition: margin 500ms linear;
+    margin-top: 0;
+}
+
+.scroll-number::-webkit-scrollbar {
+    width: 0;
+}

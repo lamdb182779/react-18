@@ -7,6 +7,9 @@ const Nav = () => {
             <NavLink to="/covid">Covid</NavLink>
             <NavLink to="/todo">Todo</NavLink>
             <NavLink to="/blog">Blog</NavLink>
+            <NavLink to="/markdown">Markdown</NavLink>
+            <NavLink to="/chart">Chart</NavLink>
+            <NavLink to="/infinity">Infinity</NavLink>
         </div>
     )
 }

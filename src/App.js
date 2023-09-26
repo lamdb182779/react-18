@@ -11,13 +11,15 @@ import CountDown from "./views/CountDown/CountDown";
 import Blog from "./views/Blog/Blog";
 import Detail from "./views/Blog/Detail";
 import NotFound from "./views/NotFound/NotFound";
+import Chart from "./views/Statistic/Chart";
+import InfinityAnimation from "./views/Infinity/Infinity";
 
 import {
   BrowserRouter,
   Route,
   Routes
 } from "react-router-dom"
-
+import Markdown from "./views/Markdown/Markdown";
 
 const App = () => {
   let [author] = useState('NOT ME')
@@ -36,6 +38,9 @@ const App = () => {
             <Route path="/todo" element={<Todo author={author} />} />
             <Route path="/blog" element={<Blog author={author} />} />
             <Route path="/blog/:id" element={<Detail author={author} />} />
+            <Route path="/markdown" element={<Markdown />} />
+            <Route path="/chart" element={<Chart />} />
+            <Route path="/infinity" element={<InfinityAnimation />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </header>

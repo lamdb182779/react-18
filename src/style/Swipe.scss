@@ -1,0 +1,42 @@
+.swipe-number {
+    height       : 3rem;
+    width        : 2rem;
+    overflow-y   : scroll;
+    overflow-x   : hidden;
+    margin-inline: 0.1rem;
+    perspective  : 10rem;
+
+    .swipe-top,
+    .swipe-show {
+        height          : 3rem;
+        width           : 2rem;
+        background-color: gray;
+        display         : flex;
+        justify-content : center;
+        align-items     : center;
+    }
+
+    .swipe-top {
+        transform       : rotateX(120deg);
+        transform-origin: top;
+    }
+
+    .swipe-show {
+        margin-top      : -3rem;
+        transform-origin: bottom;
+    }
+
+    .swipe-top.swipe {
+        transform : rotateX(0deg);
+        transition: transform 500ms linear;
+    }
+
+    .swipe-show.swipe {
+        transform : rotateX(-120deg);
+        transition: transform 500ms linear;
+    }
+}
+
+.swipe-number::-webkit-scrollbar {
+    width: 0;
+}

@@ -1,0 +1,76 @@
+.flip-number {
+    height         : 3rem;
+    margin-inline  : 0.1rem;
+    width          : 2rem;
+    position       : relative;
+    transform-style: preserve-3d;
+    perspective    : 10rem;
+
+    .flip-top,
+    .flip-front {
+        overflow-y: hidden;
+    }
+
+    .flip-top,
+    .flip-bottom,
+    .flip-back,
+    .flip-front {
+        height          : 1.5rem;
+        width           : 2rem;
+        background-color: gray;
+
+        >div {
+            height         : 3rem;
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+        }
+    }
+
+    .flip-bottom,
+    .flip-back {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        border-top: 0.05rem solid #282c34;
+
+        >div {
+            margin-top: -1.55rem;
+        }
+    }
+
+    .flip-front {
+        transform-origin: bottom;
+
+    }
+
+    .flip-back {
+        top             : 1.5rem;
+        transform       : rotateX(180deg);
+        transform-origin: top;
+    }
+
+
+    .flip-front,
+    .flip-back {
+        position           : absolute;
+        backface-visibility: hidden;
+    }
+
+    .flip-bottom::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .flip-back::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .flip-back.flip {
+        transform : rotateX(0deg);
+        transition: transform 500ms linear;
+    }
+
+    .flip-front.flip {
+        transform : rotateX(-180deg);
+        transition: transform 500ms linear;
+    }
+}
