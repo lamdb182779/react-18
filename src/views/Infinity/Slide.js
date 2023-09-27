@@ -1,6 +1,8 @@
-import "../../style/Swipe.scss"
+import "../../style/Slide.scss"
+
 import { useState, useEffect } from "react"
-const Swipe = (props) => {
+
+const Slide = (props) => {
     const date = new Date()
     const [ond, setOnd] = useState(date.getSeconds() % 10)
     const [sec, setSec] = useState(Math.floor(date.getSeconds() / 10))
@@ -29,126 +31,126 @@ const Swipe = (props) => {
         const elements = document.querySelectorAll(".ho")
         setTimeout(() => {
             setShowHo(ho)
-        }, 500)
+        }, 550)
         elements.forEach(element => {
-            element.classList.add("swipe")
+            element.classList.add("slide")
             setTimeout(() => {
-                element.classList.remove("swipe")
+                element.classList.remove("slide")
             }, 550)
         })
-    }, [ho])//react-hooks/exhaustive-deps
+    }, [ho])// eslint-disable-line react-hooks/exhaustive-deps
     useEffect(() => {
         const elements = document.querySelectorAll(".ur")
         setTimeout(() => {
             setShowUr(ur)
-        }, 500)
+        }, 550)
         elements.forEach(element => {
-            element.classList.add("swipe")
+            element.classList.add("slide")
             setTimeout(() => {
-                element.classList.remove("swipe")
+                element.classList.remove("slide")
             }, 550)
         })
-    }, [ur])//react-hooks/exhaustive-deps
+    }, [ur])// eslint-disable-line react-hooks/exhaustive-deps
     useEffect(() => {
         const elements = document.querySelectorAll(".min")
         setTimeout(() => {
             setShowMin(min)
-        }, 500)
+        }, 550)
         elements.forEach(element => {
-            element.classList.add("swipe")
+            element.classList.add("slide")
             setTimeout(() => {
-                element.classList.remove("swipe")
+                element.classList.remove("slide")
             }, 550)
         })
-    }, [min])//react-hooks/exhaustive-deps
+    }, [min])// eslint-disable-line react-hooks/exhaustive-deps
     useEffect(() => {
         const elements = document.querySelectorAll(".ute")
         setTimeout(() => {
             setShowUte(ute)
-        }, 500)
+        }, 550)
         elements.forEach(element => {
-            element.classList.add("swipe")
+            element.classList.add("slide")
             setTimeout(() => {
-                element.classList.remove("swipe")
+                element.classList.remove("slide")
             }, 550)
         })
-    }, [ute])//react-hooks/exhaustive-deps
+    }, [ute])// eslint-disable-line react-hooks/exhaustive-deps
     useEffect(() => {
         const elements = document.querySelectorAll(".sec")
         setTimeout(() => {
             setShowSec(sec)
-        }, 500)
+        }, 550)
         elements.forEach(element => {
-            element.classList.add("swipe")
+            element.classList.add("slide")
             setTimeout(() => {
-                element.classList.remove("swipe")
+                element.classList.remove("slide")
             }, 550)
         })
-    }, [sec])//react-hooks/exhaustive-deps
+    }, [sec])// eslint-disable-line react-hooks/exhaustive-deps
     useEffect(() => {
         const elements = document.querySelectorAll(".ond")
         setTimeout(() => {
             setShowOnd(ond)
-        }, 500)
+        }, 550)
         elements.forEach(element => {
-            element.classList.add("swipe")
+            element.classList.add("slide")
             setTimeout(() => {
-                element.classList.remove("swipe")
+                element.classList.remove("slide")
             }, 550)
         })
-    }, [ond])//react-hooks/exhaustive-deps
+    }, [ond])// eslint-disable-line react-hooks/exhaustive-deps
     return (
         <div className="mt-5">
             <h2>
-                <div className="w-100 d-flex justify-content-center">
-                    <div className="swipe-number">
-                        <div className="swipe-top ho">
-                            {ho}
-                        </div>
-                        <div className="swipe-show ho">
+                <div className="d-flex justify-content-center">
+                    <div className="slide-number">
+                        <div className="slide-show ho">
                             {showHo}
                         </div>
-                    </div>
-                    <div className="swipe-number">
-                        <div className="swipe-top ur">
-                            {ur}
+                        <div className="slide-hide ho">
+                            {ho}
                         </div>
-                        <div className="swipe-show ur">
+                    </div>
+                    <div className="slide-number">
+                        <div className="slide-show ur">
                             {showUr}
                         </div>
+                        <div className="slide-hide ur">
+                            {ur}
+                        </div>
                     </div>
                     :
-                    <div className="swipe-number">
-                        <div className="swipe-top min">
-                            {min}
-                        </div>
-                        <div className="swipe-show min">
+                    <div className="slide-number">
+                        <div className="slide-show min">
                             {showMin}
                         </div>
-                    </div>
-                    <div className="swipe-number">
-                        <div className="swipe-top ute">
-                            {ute}
+                        <div className="slide-hide min">
+                            {min}
                         </div>
-                        <div className="swipe-show ute">
+                    </div>
+                    <div className="slide-number">
+                        <div className="slide-show ute">
                             {showUte}
+                        </div>
+                        <div className="slide-hide ute">
+                            {ute}
                         </div>
                     </div>
                     :
-                    <div className="swipe-number">
-                        <div className="swipe-top sec">
-                            {sec}
-                        </div>
-                        <div className="swipe-show sec">
+                    <div className="slide-number">
+                        <div className="slide-show sec">
                             {showSec}
                         </div>
-                    </div>
-                    <div className="swipe-number">
-                        <div className="swipe-top ond">
-                            {ond}
+                        <div className="slide-hide sec">
+                            {sec}
                         </div>
-                        <div className="swipe-show ond">
+                    </div>
+                    <div className="slide-number">
+                        <div className="slide-show ond">
                             {showOnd}
+                        </div>
+                        <div className="slide-hide ond">
+                            {ond}
                         </div>
                     </div>
                 </div>
@@ -157,4 +159,4 @@ const Swipe = (props) => {
     )
 }
 
-export default Swipe
+export default Slide

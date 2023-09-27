@@ -1,6 +1,6 @@
-import "../../style/Swipe.scss"
+import "../../style/Fade.scss"
 import { useState, useEffect } from "react"
-const Swipe = (props) => {
+const Fade = (props) => {
     const date = new Date()
     const [ond, setOnd] = useState(date.getSeconds() % 10)
     const [sec, setSec] = useState(Math.floor(date.getSeconds() / 10))
@@ -29,125 +29,125 @@ const Swipe = (props) => {
         const elements = document.querySelectorAll(".ho")
         setTimeout(() => {
             setShowHo(ho)
-        }, 500)
+        }, 3000)
         elements.forEach(element => {
-            element.classList.add("swipe")
+            element.classList.add("fade-slow")
             setTimeout(() => {
-                element.classList.remove("swipe")
-            }, 550)
+                element.classList.remove("fade-slow")
+            }, 3100)
         })
-    }, [ho])//react-hooks/exhaustive-deps
+    }, [ho])// eslint-disable-line react-hooks/exhaustive-deps
     useEffect(() => {
         const elements = document.querySelectorAll(".ur")
         setTimeout(() => {
             setShowUr(ur)
-        }, 500)
+        }, 3000)
         elements.forEach(element => {
-            element.classList.add("swipe")
+            element.classList.add("fade-slow")
             setTimeout(() => {
-                element.classList.remove("swipe")
-            }, 550)
+                element.classList.remove("fade-slow")
+            }, 3100)
         })
-    }, [ur])//react-hooks/exhaustive-deps
+    }, [ur])// eslint-disable-line react-hooks/exhaustive-deps
     useEffect(() => {
         const elements = document.querySelectorAll(".min")
         setTimeout(() => {
             setShowMin(min)
-        }, 500)
+        }, 3000)
         elements.forEach(element => {
-            element.classList.add("swipe")
+            element.classList.add("fade-slow")
             setTimeout(() => {
-                element.classList.remove("swipe")
-            }, 550)
+                element.classList.remove("fade-slow")
+            }, 3100)
         })
-    }, [min])//react-hooks/exhaustive-deps
+    }, [min])// eslint-disable-line react-hooks/exhaustive-deps
     useEffect(() => {
         const elements = document.querySelectorAll(".ute")
         setTimeout(() => {
             setShowUte(ute)
-        }, 500)
+        }, 3000)
         elements.forEach(element => {
-            element.classList.add("swipe")
+            element.classList.add("fade-slow")
             setTimeout(() => {
-                element.classList.remove("swipe")
-            }, 550)
+                element.classList.remove("fade-slow")
+            }, 3100)
         })
-    }, [ute])//react-hooks/exhaustive-deps
+    }, [ute])// eslint-disable-line react-hooks/exhaustive-deps
     useEffect(() => {
         const elements = document.querySelectorAll(".sec")
         setTimeout(() => {
             setShowSec(sec)
-        }, 500)
+        }, 3000)
         elements.forEach(element => {
-            element.classList.add("swipe")
+            element.classList.add("fade-slow")
             setTimeout(() => {
-                element.classList.remove("swipe")
-            }, 550)
+                element.classList.remove("fade-slow")
+            }, 3100)
         })
-    }, [sec])//react-hooks/exhaustive-deps
+    }, [sec])// eslint-disable-line react-hooks/exhaustive-deps
     useEffect(() => {
         const elements = document.querySelectorAll(".ond")
         setTimeout(() => {
             setShowOnd(ond)
-        }, 500)
+        }, 900)
         elements.forEach(element => {
-            element.classList.add("swipe")
+            element.classList.add("fade")
             setTimeout(() => {
-                element.classList.remove("swipe")
-            }, 550)
+                element.classList.remove("fade")
+            }, 950)
         })
-    }, [ond])//react-hooks/exhaustive-deps
+    }, [ond])// eslint-disable-line react-hooks/exhaustive-deps
     return (
         <div className="mt-5">
             <h2>
-                <div className="w-100 d-flex justify-content-center">
-                    <div className="swipe-number">
-                        <div className="swipe-top ho">
+                <div className="d-flex justify-content-center">
+                    <div className="fade-number">
+                        <div className="fade-hide ho">
                             {ho}
                         </div>
-                        <div className="swipe-show ho">
+                        <div className="fade-show ho">
                             {showHo}
                         </div>
                     </div>
-                    <div className="swipe-number">
-                        <div className="swipe-top ur">
+                    <div className="fade-number">
+                        <div className="fade-hide ur">
                             {ur}
                         </div>
-                        <div className="swipe-show ur">
+                        <div className="fade-show ur">
                             {showUr}
                         </div>
                     </div>
                     :
-                    <div className="swipe-number">
-                        <div className="swipe-top min">
+                    <div className="fade-number">
+                        <div className="fade-hide min">
                             {min}
                         </div>
-                        <div className="swipe-show min">
+                        <div className="fade-show min">
                             {showMin}
                         </div>
                     </div>
-                    <div className="swipe-number">
-                        <div className="swipe-top ute">
+                    <div className="fade-number">
+                        <div className="fade-hide ute">
                             {ute}
                         </div>
-                        <div className="swipe-show ute">
+                        <div className="fade-show ute">
                             {showUte}
                         </div>
                     </div>
                     :
-                    <div className="swipe-number">
-                        <div className="swipe-top sec">
+                    <div className="fade-number">
+                        <div className="fade-hide sec">
                             {sec}
                         </div>
-                        <div className="swipe-show sec">
+                        <div className="fade-show sec">
                             {showSec}
                         </div>
                     </div>
-                    <div className="swipe-number">
-                        <div className="swipe-top ond">
+                    <div className="fade-number">
+                        <div className="fade-hide ond">
                             {ond}
                         </div>
-                        <div className="swipe-show ond">
+                        <div className="fade-show ond">
                             {showOnd}
                         </div>
                     </div>
@@ -157,4 +157,4 @@ const Swipe = (props) => {
     )
 }
 
-export default Swipe
+export default Fade

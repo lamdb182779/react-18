@@ -1,0 +1,44 @@
+@keyframes drop {
+    from {
+        transform: rotate(0);
+        top      : 0;
+        left     : 0;
+    }
+
+    to {
+        display: none;
+    }
+
+    99% {
+        transform: rotate(50deg);
+        top      : 3rem;
+        left     : 0.7rem;
+    }
+}
+
+.drop-number {
+    height       : 3rem;
+    width        : 2rem;
+    position     : relative;
+    margin-inline: 0.1rem;
+
+    .drop-front,
+    .drop-back {
+        height          : 3rem;
+        width           : 2rem;
+        position        : absolute;
+        background-color: gray;
+        display         : flex;
+        justify-content : center;
+        align-items     : center;
+        border          : 1px solid #282c34;
+    }
+
+    .drop-front {
+        transform-origin: top left;
+    }
+
+    .drop-front.drop {
+        animation: drop forwards 500ms ease-in-out;
+    }
+}

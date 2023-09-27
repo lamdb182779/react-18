@@ -1,7 +1,8 @@
-import "../../style/Swing.scss"
+import "../../style/Bloom.scss"
+
 import { useState, useEffect } from "react"
 
-const Swing = (props) => {
+const Bloom = (props) => {
     const date = new Date()
     const [ond, setOnd] = useState(date.getSeconds() % 10)
     const [sec, setSec] = useState(Math.floor(date.getSeconds() / 10))
@@ -32,9 +33,9 @@ const Swing = (props) => {
             setShowHo(ho)
         }, 500)
         elements.forEach(element => {
-            element.classList.add("swing")
+            element.classList.add("bloom")
             setTimeout(() => {
-                element.classList.remove("swing")
+                element.classList.remove("bloom")
             }, 550)
         })
     }, [ho])// eslint-disable-line react-hooks/exhaustive-deps
@@ -44,9 +45,9 @@ const Swing = (props) => {
             setShowUr(ur)
         }, 500)
         elements.forEach(element => {
-            element.classList.add("swing")
+            element.classList.add("bloom")
             setTimeout(() => {
-                element.classList.remove("swing")
+                element.classList.remove("bloom")
             }, 550)
         })
     }, [ur])// eslint-disable-line react-hooks/exhaustive-deps
@@ -56,9 +57,9 @@ const Swing = (props) => {
             setShowMin(min)
         }, 500)
         elements.forEach(element => {
-            element.classList.add("swing")
+            element.classList.add("bloom")
             setTimeout(() => {
-                element.classList.remove("swing")
+                element.classList.remove("bloom")
             }, 550)
         })
     }, [min])// eslint-disable-line react-hooks/exhaustive-deps
@@ -68,9 +69,9 @@ const Swing = (props) => {
             setShowUte(ute)
         }, 500)
         elements.forEach(element => {
-            element.classList.add("swing")
+            element.classList.add("bloom")
             setTimeout(() => {
-                element.classList.remove("swing")
+                element.classList.remove("bloom")
             }, 550)
         })
     }, [ute])// eslint-disable-line react-hooks/exhaustive-deps
@@ -80,9 +81,9 @@ const Swing = (props) => {
             setShowSec(sec)
         }, 500)
         elements.forEach(element => {
-            element.classList.add("swing")
+            element.classList.add("bloom")
             setTimeout(() => {
-                element.classList.remove("swing")
+                element.classList.remove("bloom")
             }, 550)
         })
     }, [sec])// eslint-disable-line react-hooks/exhaustive-deps
@@ -92,9 +93,9 @@ const Swing = (props) => {
             setShowOnd(ond)
         }, 500)
         elements.forEach(element => {
-            element.classList.add("swing")
+            element.classList.add("bloom")
             setTimeout(() => {
-                element.classList.remove("swing")
+                element.classList.remove("bloom")
             }, 550)
         })
     }, [ond])// eslint-disable-line react-hooks/exhaustive-deps
@@ -102,90 +103,54 @@ const Swing = (props) => {
         <div className="mt-5">
             <h2>
                 <div className="d-flex justify-content-center">
-                    <div className="swing-number">
-                        <div className="swing-right ho">
-                            <div className="bg-secondary">
-                                {ho}
-                            </div>
-                            <div className="" />
+                    <div className="bloom-number">
+                        <div className="bloom-back ho">
+                            {ho}
                         </div>
-                        <div className="swing-top ho">
-                            <div className="bg-secondary">
-                                {showHo}
-                            </div>
-                            <div className="" />
+                        <div className="bloom-front ho">
+                            {showHo}
                         </div>
                     </div>
-                    <div className="swing-number">
-                        <div className="swing-right ur">
-                            <div className="bg-secondary">
-                                {ur}
-                            </div>
-                            <div className="" />
+                    <div className="bloom-number">
+                        <div className="bloom-back ur">
+                            {ur}
                         </div>
-                        <div className="swing-top ur">
-                            <div className="bg-secondary">
-                                {showUr}
-                            </div>
-                            <div className="" />
+                        <div className="bloom-front ur">
+                            {showUr}
                         </div>
                     </div>
                     :
-                    <div className="swing-number">
-                        <div className="swing-right min">
-                            <div className="bg-secondary">
-                                {min}
-                            </div>
-                            <div className="" />
+                    <div className="bloom-number">
+                        <div className="bloom-back min">
+                            {min}
                         </div>
-                        <div className="swing-top min">
-                            <div className="bg-secondary">
-                                {showMin}
-                            </div>
-                            <div className="" />
+                        <div className="bloom-front min">
+                            {showMin}
                         </div>
                     </div>
-                    <div className="swing-number">
-                        <div className="swing-right ute">
-                            <div className="bg-secondary">
-                                {ute}
-                            </div>
-                            <div className="" />
+                    <div className="bloom-number">
+                        <div className="bloom-back ute">
+                            {ute}
                         </div>
-                        <div className="swing-top ute">
-                            <div className="bg-secondary">
-                                {showUte}
-                            </div>
-                            <div className="" />
+                        <div className="bloom-front ute">
+                            {showUte}
                         </div>
                     </div>
                     :
-                    <div className="swing-number">
-                        <div className="swing-right sec">
-                            <div className="bg-secondary">
-                                {sec}
-                            </div>
-                            <div className="" />
+                    <div className="bloom-number">
+                        <div className="bloom-back sec">
+                            {sec}
                         </div>
-                        <div className="swing-top sec">
-                            <div className="bg-secondary">
-                                {showSec}
-                            </div>
-                            <div className="" />
+                        <div className="bloom-front sec">
+                            {showSec}
                         </div>
                     </div>
-                    <div className="swing-number">
-                        <div className="swing-right ond">
-                            <div className="bg-secondary">
-                                {ond}
-                            </div>
-                            <div className="" />
+                    <div className="bloom-number">
+                        <div className="bloom-back ond">
+                            {ond}
                         </div>
-                        <div className="swing-top ond">
-                            <div className="bg-secondary">
-                                {showOnd}
-                            </div>
-                            <div className="" />
+                        <div className="bloom-front ond">
+                            {showOnd}
                         </div>
                     </div>
                 </div>
@@ -194,4 +159,4 @@ const Swing = (props) => {
     )
 }
 
-export default Swing
+export default Bloom

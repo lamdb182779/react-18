@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react"
-import "../../style/Scroll.scss"
-const Scroll = (props) => {
+import "../../style/Bounce.scss"
+import { useState, useEffect } from "react"
+
+const Bounce = (props) => {
     const date = new Date()
     const [ond, setOnd] = useState(date.getSeconds() % 10)
     const [sec, setSec] = useState(Math.floor(date.getSeconds() / 10))
@@ -26,116 +27,116 @@ const Scroll = (props) => {
         }, 1000)
     }, [])// eslint-disable-line react-hooks/exhaustive-deps
     useEffect(() => {
-        const elementClass = document.querySelector(".ond").classList
-        elementClass.add("scroll")
-        setTimeout(() => {
-            setShowOnd(ond)
-        }, 500)
-        setTimeout(() => {
-            elementClass.remove("scroll")
-        }, 550)
-    }, [ond])//react-hooks/exhaustive-deps
-    useEffect(() => {
-        const elementClass = document.querySelector(".sec").classList
-        elementClass.add("scroll")
-        setTimeout(() => {
-            setShowSec(sec)
-        }, 500)
-        setTimeout(() => {
-            elementClass.remove("scroll")
-        }, 550)
-    }, [sec])//react-hooks/exhaustive-deps
-    useEffect(() => {
-        const elementClass = document.querySelector(".ute").classList
-        elementClass.add("scroll")
-        setTimeout(() => {
-            setShowUte(ute)
-        }, 500)
-        setTimeout(() => {
-            elementClass.remove("scroll")
-        }, 550)
-    }, [ute])//react-hooks/exhaustive-deps
-    useEffect(() => {
-        const elementClass = document.querySelector(".min").classList
-        elementClass.add("scroll")
-        setTimeout(() => {
-            setShowMin(min)
-        }, 500)
-        setTimeout(() => {
-            elementClass.remove("scroll")
-        }, 550)
-    }, [min])//react-hooks/exhaustive-deps
-    useEffect(() => {
-        const elementClass = document.querySelector(".ur").classList
-        elementClass.add("scroll")
-        setTimeout(() => {
-            setShowUr(ur)
-        }, 500)
-        setTimeout(() => {
-            elementClass.remove("scroll")
-        }, 550)
-    }, [ur])//react-hooks/exhaustive-deps
-    useEffect(() => {
         const elementClass = document.querySelector(".ho").classList
-        elementClass.add("scroll")
+        elementClass.add("bounce")
         setTimeout(() => {
             setShowHo(ho)
         }, 500)
         setTimeout(() => {
-            elementClass.remove("scroll")
+            elementClass.remove("bounce")
         }, 550)
-    }, [ho])//react-hooks/exhaustive-deps
+    }, [ho])// eslint-disable-line react-hooks/exhaustive-deps
+    useEffect(() => {
+        const elementClass = document.querySelector(".ur").classList
+        elementClass.add("bounce")
+        setTimeout(() => {
+            setShowUr(ur)
+        }, 500)
+        setTimeout(() => {
+            elementClass.remove("bounce")
+        }, 550)
+    }, [ur])// eslint-disable-line react-hooks/exhaustive-deps
+    useEffect(() => {
+        const elementClass = document.querySelector(".min").classList
+        elementClass.add("bounce")
+        setTimeout(() => {
+            setShowMin(min)
+        }, 500)
+        setTimeout(() => {
+            elementClass.remove("bounce")
+        }, 550)
+    }, [min])// eslint-disable-line react-hooks/exhaustive-deps
+    useEffect(() => {
+        const elementClass = document.querySelector(".ute").classList
+        elementClass.add("bounce")
+        setTimeout(() => {
+            setShowUte(ute)
+        }, 500)
+        setTimeout(() => {
+            elementClass.remove("bounce")
+        }, 550)
+    }, [ute])// eslint-disable-line react-hooks/exhaustive-deps
+    useEffect(() => {
+        const elementClass = document.querySelector(".sec").classList
+        elementClass.add("bounce")
+        setTimeout(() => {
+            setShowSec(sec)
+        }, 500)
+        setTimeout(() => {
+            elementClass.remove("bounce")
+        }, 550)
+    }, [sec])// eslint-disable-line react-hooks/exhaustive-deps
+    useEffect(() => {
+        const elementClass = document.querySelector(".ond").classList
+        elementClass.add("bounce")
+        setTimeout(() => {
+            setShowOnd(ond)
+        }, 500)
+        setTimeout(() => {
+            elementClass.remove("bounce")
+        }, 550)
+    }, [ond])// eslint-disable-line react-hooks/exhaustive-deps
     return (
-        <div className=" mt-5">
+        <div className="">
             <h2>
-                <div className="w-100 d-flex justify-content-center">
-                    <div className="scroll-number">
-                        <div className="d-flex random ho">
+                <div className="d-flex justify-content-center">
+                    <div className="bounce-number">
+                        <div className="bounce-back ho">
                             {ho}
                         </div>
-                        <div className="d-flex show">
+                        <div className="bounce-front">
                             {showHo}
                         </div>
                     </div>
-                    <div className="scroll-number">
-                        <div className="d-flex random ur">
+                    <div className="bounce-number">
+                        <div className="bounce-back ur">
                             {ur}
                         </div>
-                        <div className="d-flex show">
+                        <div className="bounce-front">
                             {showUr}
                         </div>
                     </div>
-                    :
-                    <div className="scroll-number">
-                        <div className="d-flex random min">
+                    <div className="colon">:</div>
+                    <div className="bounce-number">
+                        <div className="bounce-back min">
                             {min}
                         </div>
-                        <div className="d-flex show">
+                        <div className="bounce-front">
                             {showMin}
                         </div>
                     </div>
-                    <div className="scroll-number">
-                        <div className="d-flex random ute">
+                    <div className="bounce-number">
+                        <div className="bounce-back ute">
                             {ute}
                         </div>
-                        <div className="d-flex show">
+                        <div className="bounce-front">
                             {showUte}
                         </div>
                     </div>
-                    :
-                    <div className="scroll-number">
-                        <div className="d-flex random sec">
+                    <div className="colon">:</div>
+                    <div className="bounce-number">
+                        <div className="bounce-back sec">
                             {sec}
                         </div>
-                        <div className="d-flex show">
+                        <div className="bounce-front">
                             {showSec}
                         </div>
                     </div>
-                    <div className="scroll-number">
-                        <div className="d-flex random ond">
+                    <div className="bounce-number">
+                        <div className="bounce-back ond">
                             {ond}
                         </div>
-                        <div className="d-flex show">
+                        <div className="bounce-front">
                             {showOnd}
                         </div>
                     </div>
@@ -145,4 +146,4 @@ const Scroll = (props) => {
     )
 }
 
-export default Scroll
+export default Bounce

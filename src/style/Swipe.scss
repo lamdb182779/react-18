@@ -1,7 +1,7 @@
 .swipe-number {
     height       : 3rem;
     width        : 2rem;
-    overflow-y   : scroll;
+    overflow-y   : hidden;
     overflow-x   : hidden;
     margin-inline: 0.1rem;
     perspective  : 10rem;
@@ -35,8 +35,4 @@
         transform : rotateX(-120deg);
         transition: transform 500ms linear;
     }
-}
-
-.swipe-number::-webkit-scrollbar {
-    width: 0;
 }

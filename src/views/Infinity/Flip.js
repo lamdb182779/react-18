@@ -26,79 +26,79 @@ const Flip = (props) => {
         }, 1000)
     }, [])// eslint-disable-line react-hooks/exhaustive-deps
     useEffect(() => {
-        const hos = document.querySelectorAll(".ho")
+        const elements = document.querySelectorAll(".ho")
         setTimeout(() => {
             setShowHo(ho)
         }, 500)
-        hos.forEach(ho => {
-            ho.classList.add("flip")
+        elements.forEach(element => {
+            element.classList.add("flip")
             setTimeout(() => {
-                ho.classList.remove("flip")
+                element.classList.remove("flip")
             }, 550)
         })
     }, [ho])// eslint-disable-line react-hooks/exhaustive-deps
     useEffect(() => {
-        const urs = document.querySelectorAll(".ur")
+        const elements = document.querySelectorAll(".ur")
         setTimeout(() => {
             setShowUr(ur)
         }, 500)
-        urs.forEach(ur => {
-            ur.classList.add("flip")
+        elements.forEach(element => {
+            element.classList.add("flip")
             setTimeout(() => {
-                ur.classList.remove("flip")
+                element.classList.remove("flip")
             }, 550)
         })
     }, [ur])// eslint-disable-line react-hooks/exhaustive-deps
     useEffect(() => {
-        const mins = document.querySelectorAll(".min")
+        const elements = document.querySelectorAll(".min")
         setTimeout(() => {
             setShowMin(min)
         }, 500)
-        mins.forEach(min => {
-            min.classList.add("flip")
+        elements.forEach(element => {
+            element.classList.add("flip")
             setTimeout(() => {
-                min.classList.remove("flip")
+                element.classList.remove("flip")
             }, 550)
         })
     }, [min])// eslint-disable-line react-hooks/exhaustive-deps
     useEffect(() => {
-        const utes = document.querySelectorAll(".ute")
+        const elements = document.querySelectorAll(".ute")
         setTimeout(() => {
             setShowUte(ute)
         }, 500)
-        utes.forEach(ute => {
-            ute.classList.add("flip")
+        elements.forEach(element => {
+            element.classList.add("flip")
             setTimeout(() => {
-                ute.classList.remove("flip")
+                element.classList.remove("flip")
             }, 550)
         })
     }, [ute])// eslint-disable-line react-hooks/exhaustive-deps
     useEffect(() => {
-        const secs = document.querySelectorAll(".sec")
+        const elements = document.querySelectorAll(".sec")
         setTimeout(() => {
             setShowSec(sec)
         }, 500)
-        secs.forEach(sec => {
-            sec.classList.add("flip")
+        elements.forEach(element => {
+            element.classList.add("flip")
             setTimeout(() => {
-                sec.classList.remove("flip")
+                element.classList.remove("flip")
             }, 550)
         })
     }, [sec])// eslint-disable-line react-hooks/exhaustive-deps
     useEffect(() => {
-        const onds = document.querySelectorAll(".ond")
+        const elements = document.querySelectorAll(".ond")
         setTimeout(() => {
             setShowOnd(ond)
         }, 500)
-        onds.forEach(ond => {
-            ond.classList.add("flip")
+        elements.forEach(element => {
+            element.classList.add("flip")
             setTimeout(() => {
-                ond.classList.remove("flip")
+                element.classList.remove("flip")
             }, 550)
         })
     }, [ond])// eslint-disable-line react-hooks/exhaustive-deps
     return (
-        <div className="fs-3">
+        <div className="mt-5">
             <h2>
                 <div className="w-100 d-flex justify-content-center">
                     <div className="flip-number">

@@ -1,0 +1,37 @@
+.swing-number {
+    position     : relative;
+    height       : 3rem;
+    width        : 2rem;
+    overflow-x   : hidden;
+    overflow-y   : hidden;
+    margin-inline: 0.1rem;
+
+    .swing-right,
+    .swing-top {
+        height          : 7rem;
+        width           : 2rem;
+        position        : absolute;
+        transform-origin: bottom;
+
+        .bg-secondary {
+            height         : 3rem;
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+        }
+    }
+
+    .swing-right {
+        transform: rotate(30deg);
+    }
+
+    .swing-right.swing {
+        transform : rotate(0);
+        transition: transform 500ms linear;
+    }
+
+    .swing-top.swing {
+        transform : rotate(-30deg);
+        transition: transform 500ms linear;
+    }
+}

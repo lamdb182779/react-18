@@ -1,0 +1,39 @@
+.fade-number {
+    position     : relative;
+    height       : 3rem;
+    width        : 2rem;
+    margin-inline: 0.1rem;
+
+    .fade-hide,
+    .fade-show {
+        height          : 3rem;
+        width           : 2rem;
+        display         : flex;
+        justify-content : center;
+        align-items     : center;
+        background-color: gray;
+        position        : absolute;
+    }
+
+    .fade-hide {
+        opacity: 0;
+    }
+
+    .fade-hide.fade,
+    .fade-hide.fade-slow {
+        opacity: 1;
+    }
+
+    .fade-show.fade,
+    .fade-show.fade-slow {
+        opacity: 0;
+    }
+
+    .fade {
+        transition: opacity 900ms linear;
+    }
+
+    .fade-slow {
+        transition: opacity 2.5s linear;
+    }
+}

@@ -1,0 +1,33 @@
+.bloom-number {
+    height       : 3rem;
+    width        : 2rem;
+    margin-inline: 0.1rem;
+    position     : relative;
+    perspective  : 5rem;
+
+    .bloom-front,
+    .bloom-back {
+        height          : 3rem;
+        width           : 2rem;
+        display         : flex;
+        justify-content : center;
+        align-items     : center;
+        position        : absolute;
+        background-color: gray;
+    }
+
+    .bloom-back {
+        scale: 0.8;
+    }
+
+    .bloom-back.bloom {
+        scale     : 1;
+        transition: scale 500ms linear;
+    }
+
+    .bloom-front.bloom {
+        transform : translateZ(3rem);
+        opacity   : 0;
+        transition: all 500ms linear;
+    }
+}
